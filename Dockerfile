@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install google-cloud-sdk google-cloud-sdk-app-engi
 RUN apt-get install python-setuptools -y && easy_install virtualenv
 
 # Install Java, needed by Google Closure compiler
-RUN apt-get update && apt-get install software-properties-common python-software-properties -y && add-apt-repository ppa:openjdk-r/ppa && apt-get update && apt-get install -yq openjdk-7-jre
+RUN apt-get update && apt-get install software-properties-common -y && add-apt-repository ppa:openjdk-r/ppa && apt-get update && apt-get install -yq openjdk-7-jre
 
 # Install Node and npm
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
