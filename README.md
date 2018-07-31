@@ -4,6 +4,7 @@ Docker image for sites which need to run:
 
 * Python 2.7
 * Google Cloud SDK (latest)
+* Java 8
 * NodeJS 8.x
 * Chrome
 
