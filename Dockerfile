@@ -10,6 +10,9 @@ RUN curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 RUN apt-get update && apt-get install google-cloud-sdk google-cloud-sdk-app-engine-python google-cloud-sdk-app-engine-python-extras -y
 RUN apt-get install python-setuptools -y && easy_install virtualenv
 
+# Install Java, needed by Google Closure compiler
+RUN apt-get update && apt-get install -yq openjdk-8-jre
+
 # Install Node and npm
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
 RUN apt-get install -y nodejs
