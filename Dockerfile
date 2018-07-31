@@ -10,12 +10,6 @@ RUN curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 RUN apt-get update && apt-get install google-cloud-sdk google-cloud-sdk-app-engine-python google-cloud-sdk-app-engine-python-extras -y
 RUN apt-get install python-setuptools -y && easy_install virtualenv
 
-# Install Java, needed by Google Closure compiler
-RUN mkdir -p /usr/share/man/man1 && \
-    (echo "deb http://http.debian.net/debian stretch-backports main" > /etc/apt/sources.list.d/backports.list) && \
-    apt-get update -y && \
-    apt-get install -t stretch-backports openjdk-7-jdk -y
-
 # Install Node and npm
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
 RUN apt-get install -y nodejs
