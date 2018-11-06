@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -yq gconf-service libasound2 libatk1.0-0 l
 # Install the Google Cloud SDK.
 RUN echo "deb http://packages.cloud.google.com/apt cloud-sdk-jessie main" | tee /etc/apt/sources.list.d/google-cloud-sdk.list
 RUN curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
-RUN apt-get update && apt-get install google-cloud-sdk google-cloud-sdk-app-engine-python google-cloud-sdk-app-engine-python-extras -y
+RUN apt-get update && apt-get install google-cloud-sdk google-cloud-sdk-app-engine-python google-cloud-sdk-app-engine-python-extras google-cloud-sdk-datastore-emulator -y
 RUN apt-get install python-setuptools -y && easy_install virtualenv
 
 # Install Java, needed by Google Closure compiler
