@@ -1,4 +1,4 @@
-FROM python:2.7
+FROM python:2.7-stretch
 ENV PYTHONUNBUFFERED 1
 
 # Add Chrome browser dependencies
@@ -11,10 +11,10 @@ RUN apt-get update && apt-get install google-cloud-sdk google-cloud-sdk-app-engi
 RUN apt-get install python-setuptools -y && easy_install virtualenv
 
 # Install Java, needed by Google Closure compiler
-RUN apt-get update && apt-get install -yq openjdk-8-jre
+RUN apt-get update && apt-get install -yq openjdk-8-jre-headless
 
 # Install Node and npm
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
 RUN apt-get install -y nodejs
 
-CMD ["python --version && node --version && npm --version"]
+CMD ["cat /etc/issue && python --version && node --version && npm --version"]
