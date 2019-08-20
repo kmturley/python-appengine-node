@@ -17,4 +17,4 @@ RUN apt-get update && apt-get install -yq openjdk-8-jre-headless
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
 RUN apt-get install -y nodejs
 
-CMD ["cat /etc/issue && python --version && node --version && npm --version"]
+CMD ["/bin/sh", "-c", "cat /etc/issue && python --version && node --version && npm --version"]
